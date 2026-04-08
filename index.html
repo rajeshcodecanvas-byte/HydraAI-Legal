@@ -5,48 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - HydraAI</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; padding: 40px; max-width: 800px; margin: auto; color: #333; background-color: #f9f9f9; }
-        .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #eee; }
-        h1 { color: #007BFF; border-bottom: 2px solid #007BFF; padding-bottom: 10px; }
-        h2 { color: #0056b3; margin-top: 30px; }
-        .highlight { background: #eef7ff; padding: 20px; border-left: 6px solid #007BFF; border-radius: 4px; margin: 20px 0; }
-        strong { color: #000; }
-        footer { margin-top: 50px; font-size: 0.9em; color: #777; text-align: center; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; padding: 20px; max-width: 850px; margin: auto; color: #333; background-color: #f4f7f9; }
+        .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #e1e8ed; }
+        h1 { color: #007BFF; border-bottom: 2px solid #eef2f7; padding-bottom: 15px; font-size: 2.2em; }
+        h2 { color: #0056b3; margin-top: 35px; font-size: 1.5em; border-left: 4px solid #007BFF; padding-left: 15px; }
+        .highlight { background: #f0f7ff; padding: 20px; border-radius: 8px; margin: 20px 0; border: 1px dashed #007BFF; }
+        p { margin-bottom: 1.5em; }
+        strong { color: #1a1a1a; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        footer { margin-top: 60px; font-size: 0.85em; color: #888; text-align: center; border-top: 1px solid #eee; padding-top: 20px; }
+        a { color: #007BFF; text-decoration: none; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Privacy Policy for HydraAI</h1>
-        <p><strong>Last Updated: April 2026</strong></p>
+        <p><strong>Effective Date: April 2026</strong></p>
 
-        <p>At <strong>HydraAI</strong>, your privacy is our top priority. Our application is designed with an <strong>offline-first</strong> philosophy, ensuring that your sensitive health and hydration data remains on your physical device and under your total control. <strong>We do not require user accounts or cloud synchronization.</strong></p>
+        <p>At <strong>HydraAI</strong>, we believe your health data is your own. Our application is built with a <strong>Local-First & Privacy-First</strong> architecture. This means your data stays on your device, not on our servers.</p>
 
-        <h2>1. Data Collection & Usage</h2>
+        <h2>1. Data Collection and Usage</h2>
         
+        <p><strong>A. User-Provided Information:</strong> Information you enter (Name, Weight, Gender, Age) is used solely to calculate your physiological hydration needs. This data is stored in a private, <strong>encrypted SQLite database</strong> on your physical device.</p>
+
         <div class="highlight">
-            <p><strong>Location Data:</strong> HydraAI requests access to your <strong>Coarse Location (Approximate)</strong>. This data is used exclusively to fetch local weather conditions via the Open-Meteo API to dynamically adjust your daily hydration goal. We do not track movements, store location history, or share coordinates with third parties for advertising.</p>
+            <p><strong>B. Location Data (Sensitive Permission):</strong> HydraAI requests <strong>Coarse Location (Approximate)</strong> permission. 
+            <ul>
+                <li><strong>Purpose:</strong> To fetch local weather (temperature/humidity) via the Open-Meteo API.</li>
+                <li><strong>Usage:</strong> Weather data allows the "AI Engine" to increase your water goal during heatwaves.</li>
+                <li><strong>Policy:</strong> We <u>do not</u> store your location history, track your GPS coordinates, or share your location with advertisers.</li>
+            </ul>
+        </p>
         </div>
 
-        <p><strong>Hydration & Profile Data:</strong> Information such as your Name, Weight, Gender, and <strong>Daily Hydration Logs</strong> are stored locally in a secure, private SQLite database on your device. This data is used strictly for calculating physiological hydration targets and displaying your personal history.</p>
+        <p><strong>C. Device Sensors:</strong> We access the device <strong>Accelerometer</strong> to animate the water level in the UI. This processing happens entirely in the device's volatile memory; no sensor data is ever logged or saved.</p>
 
-        <p><strong>Physical Sensors:</strong> We utilize the device Accelerometer (Tilt Sensor) for real-time visual effects in the UI. This data is processed instantly; no sensor data is ever recorded or transmitted.</p>
+        <p><strong>D. Notifications:</strong> We use the <code>POST_NOTIFICATIONS</code> permission to send hydration reminders. These are triggered locally by your device’s internal clock and do not involve external tracking.</p>
 
-        <p><strong>Notifications:</strong> We use local notifications to provide hydration reminders. Your reminder schedule is managed entirely on your device and is not shared with any external servers.</p>
+        <h2>2. Data Sharing and Third Parties</h2>
+        <p><strong>No Data Sale:</strong> We <u>never</u> sell, rent, or trade your personal data with third parties.</p>
+        <p><strong>Weather API:</strong> When the app updates weather info, it sends <i>approximate</i> coordinates to <strong>Open-Meteo</strong>. No personally identifiable information (PII) such as your Name or Device ID is sent with this request.</p>
 
-        <h2>2. Third-Party Services</h2>
-        <p>We use the <strong>Open-Meteo API</strong> for weather adjustments. When the app requests weather data, only approximate coordinates are sent. No personal identifiers (Name, Email, or Device ID) are ever shared with this or any other service.</p>
+        <h2>3. Data Retention and Deletion</h2>
+        <p><strong>Total Control:</strong> You own your data. We retain your information only as long as the app is installed. 
+        <ul>
+            <li><strong>Manual Deletion:</strong> You can use the <strong>"Reset App"</strong> button in Settings to instantly wipe all profile data and hydration history.</li>
+            <li><strong>App Uninstallation:</strong> Deleting the app from your device automatically removes all associated data stored in the app's private directory.</li>
+        </ul>
+        </p>
 
-        <h2>3. Data Deletion & User Control</h2>
-        <p>In compliance with Google Play’s Data Deletion policy, we provide a <strong>"Reset App"</strong> feature within the Settings menu. Using this feature will instantly and permanently delete all local databases, user profiles, hydration history, and preference files from your device. Since we do not store data in the cloud, this action is final and removes all traces of your data.</p>
+        <h2>4. Children’s Privacy</h2>
+        <p>HydraAI does not knowingly collect or solicit personal information from children under the age of 13. If you are a parent and believe your child has provided us with information, please contact us for immediate removal.</p>
 
-        <h2>4. Contact & Data Requests</h2>
-        <p>If you have any questions regarding this policy or wish to submit a formal inquiry, please contact the developer directly at:</p>
-        <p class="highlight" style="text-align: center; border-left: none; border-top: 4px solid #007BFF;">
-            <strong>Email: <a href="mailto:rajesh.codecanvas@gmail.com">rajesh.codecanvas@gmail.com</a></strong>
+        <h2>5. Contact Us</h2>
+        <p>If you have questions about this Privacy Policy or how your data is handled, please reach out:</p>
+        <p style="text-align: center; font-weight: bold; background: #f8f9fa; padding: 15px; border-radius: 5px;">
+            Developer Email: <a href="mailto:rajesh.codecanvas@gmail.com">rajesh.codecanvas@gmail.com</a>
         </p>
 
         <footer>
-            &copy; 2026 HydraAI App Development. All rights reserved.
+            &copy; 2026 HydraAI. All rights reserved.<br>
+            Developed by Rajesh CodeCanvas.
         </footer>
     </div>
 </body>
