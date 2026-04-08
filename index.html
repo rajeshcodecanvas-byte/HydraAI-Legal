@@ -6,7 +6,7 @@
     <title>Privacy Policy - HydraAI</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; padding: 40px; max-width: 800px; margin: auto; color: #333; background-color: #f9f9f9; }
-        .container { background: white; padding: 40px; border-radius: 12px; shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #eee; }
+        .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #eee; }
         h1 { color: #007BFF; border-bottom: 2px solid #007BFF; padding-bottom: 10px; }
         h2 { color: #0056b3; margin-top: 30px; }
         .highlight { background: #eef7ff; padding: 20px; border-left: 6px solid #007BFF; border-radius: 4px; margin: 20px 0; }
@@ -19,25 +19,28 @@
         <h1>Privacy Policy for HydraAI</h1>
         <p><strong>Last Updated: April 2026</strong></p>
 
-        <p>At <strong>HydraAI</strong>, your privacy is our top priority. Our application is designed with an <strong>offline-first</strong> philosophy, ensuring that your sensitive health and hydration data remains on your physical device and under your total control.</p>
+        <p>At <strong>HydraAI</strong>, your privacy is our top priority. Our application is designed with an <strong>offline-first</strong> philosophy, ensuring that your sensitive health and hydration data remains on your physical device and under your total control. <strong>We do not require user accounts or cloud synchronization.</strong></p>
 
         <h2>1. Data Collection & Usage</h2>
+        
         <div class="highlight">
-            <p><strong>Location Data:</strong> HydraAI requests access to your <strong>Coarse Location (Approximate)</strong>. This data is used exclusively to fetch local weather conditions (temperature and heatwave alerts) via the Open-Meteo API to dynamically adjust your daily hydration goal. <strong>We do not track your movements, store your location history, or share your coordinates with third parties for advertising.</strong></p>
+            <p><strong>Location Data:</strong> HydraAI requests access to your <strong>Coarse Location (Approximate)</strong>. This data is used exclusively to fetch local weather conditions via the Open-Meteo API to dynamically adjust your daily hydration goal. We do not track movements, store location history, or share coordinates with third parties for advertising.</p>
         </div>
 
-        <p><strong>Physical Sensors:</strong> We utilize the device Accelerometer (Tilt Sensor) to provide a premium, interactive visual "sloshing" effect in the water bottle UI. This data is processed in real-time on your device; no sensor data is recorded, logged, or transmitted off the device.</p>
+        <p><strong>Hydration & Profile Data:</strong> Information such as your Name, Weight, Gender, and <strong>Daily Hydration Logs</strong> are stored locally in a secure, private SQLite database on your device. This data is used strictly for calculating physiological hydration targets and displaying your personal history.</p>
 
-        <p><strong>User Profile:</strong> Information such as your Name, Weight, and Gender are stored locally in a secure, private SQLite database. This information is used strictly for calculating physiological hydration targets.</p>
+        <p><strong>Physical Sensors:</strong> We utilize the device Accelerometer (Tilt Sensor) for real-time visual effects in the UI. This data is processed instantly; no sensor data is ever recorded or transmitted.</p>
+
+        <p><strong>Notifications:</strong> We use local notifications to provide hydration reminders. Your reminder schedule is managed entirely on your device and is not shared with any external servers.</p>
 
         <h2>2. Third-Party Services</h2>
-        <p>We use the <strong>Open-Meteo API</strong> for real-time weather adjustments. When the app requests weather data, only approximate coordinates are sent. No personal identifiers (such as your Name, Email, or Device ID) are ever shared with this service.</p>
+        <p>We use the <strong>Open-Meteo API</strong> for weather adjustments. When the app requests weather data, only approximate coordinates are sent. No personal identifiers (Name, Email, or Device ID) are ever shared with this or any other service.</p>
 
         <h2>3. Data Deletion & User Control</h2>
-        <p>In compliance with global privacy standards and Google Play policies, we provide a <strong>"Reset App"</strong> feature within the Settings menu. Using this feature will instantly and permanently delete all local databases, user profiles, and preference files from your device.</p>
+        <p>In compliance with Google Play’s Data Deletion policy, we provide a <strong>"Reset App"</strong> feature within the Settings menu. Using this feature will instantly and permanently delete all local databases, user profiles, hydration history, and preference files from your device. Since we do not store data in the cloud, this action is final and removes all traces of your data.</p>
 
         <h2>4. Contact & Data Requests</h2>
-        <p>If you have any questions regarding this policy or wish to submit a formal data deletion request, please contact the developer directly at:</p>
+        <p>If you have any questions regarding this policy or wish to submit a formal inquiry, please contact the developer directly at:</p>
         <p class="highlight" style="text-align: center; border-left: none; border-top: 4px solid #007BFF;">
             <strong>Email: <a href="mailto:rajesh.codecanvas@gmail.com">rajesh.codecanvas@gmail.com</a></strong>
         </p>
