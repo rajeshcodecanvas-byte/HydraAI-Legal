@@ -10,12 +10,15 @@
         h1 { color: #007BFF; border-bottom: 2px solid #eef2f7; padding-bottom: 15px; font-size: 2.2em; }
         h2 { color: #0056b3; margin-top: 35px; font-size: 1.5em; border-left: 4px solid #007BFF; padding-left: 15px; }
         .highlight { background: #f0f7ff; padding: 20px; border-radius: 8px; margin: 20px 0; border: 1px dashed #007BFF; }
+        .disclaimer { background: #fff4e5; padding: 20px; border-radius: 8px; margin: 20px 0; border: 1px solid #ffa94d; color: #663c00; font-size: 0.95em; }
         p { margin-bottom: 1.5em; }
         strong { color: #1a1a1a; }
         ul { padding-left: 20px; }
         li { margin-bottom: 10px; }
         footer { margin-top: 60px; font-size: 0.85em; color: #888; text-align: center; border-top: 1px solid #eee; padding-top: 20px; }
-        a { color: #007BFF; text-decoration: none; }
+        a { color: #007BFF; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-family: monospace; }
     </style>
 </head>
 <body>
@@ -25,16 +28,21 @@
 
         <p>At <strong>HydraAI</strong>, we believe your health data is your own. Our application is built with a <strong>Local-First & Privacy-First</strong> architecture. This means your data stays on your device, not on our servers.</p>
 
-        <h2>1. Data Collection and Usage</h2>
+        <div class="disclaimer">
+            <strong>1. Medical Disclaimer</strong><br>
+            HydraAI is a hydration tracking tool intended for informational purposes only. It is <strong>not a medical device</strong> and is not intended to diagnose, treat, or prevent any medical condition. Hydration targets are estimates; please consult a healthcare professional for personalized medical advice.
+        </div>
+
+        <h2>2. Data Collection and Usage</h2>
         
-        <p><strong>A. User-Provided Information:</strong> Information you enter (Name, Weight, Gender, Age) is used solely to calculate your physiological hydration needs. This data is stored in a private, <strong>encrypted SQLite database</strong> on your physical device.</p>
+        <p><strong>A. User-Provided Information:</strong> Information you enter (Name, Weight, Gender) is used solely to calculate your physiological hydration needs. This data is stored in a private, <strong>encrypted SQLite database</strong> on your physical device using hardware-backed encryption keys.</p>
 
         <div class="highlight">
             <p><strong>B. Location Data (Sensitive Permission):</strong> HydraAI requests <strong>Coarse Location (Approximate)</strong> permission. 
             <ul>
                 <li><strong>Purpose:</strong> To fetch local weather (temperature/humidity) via the Open-Meteo API.</li>
-                <li><strong>Usage:</strong> Weather data allows the "AI Engine" to increase your water goal during heatwaves.</li>
-                <li><strong>Policy:</strong> We <u>do not</u> store your location history, track your GPS coordinates, or share your location with advertisers.</li>
+                <li><strong>Ephemeral Processing:</strong> Your approximate coordinates are processed only in volatile memory to fulfill the weather request. We <u>do not</u> store your location history or track your GPS coordinates.</li>
+                <li><strong>Usage:</strong> Weather data allows the "AI Engine" to increase your water goal during heatwaves to prevent dehydration.</li>
             </ul>
         </p>
         </div>
@@ -43,11 +51,11 @@
 
         <p><strong>D. Notifications:</strong> We use the <code>POST_NOTIFICATIONS</code> permission to send hydration reminders. These are triggered locally by your device’s internal clock and do not involve external tracking.</p>
 
-        <h2>2. Data Sharing and Third Parties</h2>
+        <h2>3. Data Sharing and Third Parties</h2>
         <p><strong>No Data Sale:</strong> We <u>never</u> sell, rent, or trade your personal data with third parties.</p>
-        <p><strong>Weather API:</strong> When the app updates weather info, it sends <i>approximate</i> coordinates to <strong>Open-Meteo</strong>. No personally identifiable information (PII) such as your Name or Device ID is sent with this request.</p>
+        <p><strong>Weather API:</strong> When the app updates weather info, it sends <i>approximate</i> coordinates to <strong>Open-Meteo</strong>. No personally identifiable information (PII) such as your Name or Device ID is sent with this request. Weather data is provided by <a href="https://open-meteo.com/" target="_blank">Open-Meteo</a> under the CC BY 4.0 license.</p>
 
-        <h2>3. Data Retention and Deletion</h2>
+        <h2>4. Data Retention and Deletion</h2>
         <p><strong>Total Control:</strong> You own your data. We retain your information only as long as the app is installed. 
         <ul>
             <li><strong>Manual Deletion:</strong> You can use the <strong>"Reset App"</strong> button in Settings to instantly wipe all profile data and hydration history.</li>
@@ -55,10 +63,10 @@
         </ul>
         </p>
 
-        <h2>4. Children’s Privacy</h2>
+        <h2>5. Children’s Privacy</h2>
         <p>HydraAI does not knowingly collect or solicit personal information from children under the age of 13. If you are a parent and believe your child has provided us with information, please contact us for immediate removal.</p>
 
-        <h2>5. Contact Us</h2>
+        <h2>6. Contact Us</h2>
         <p>If you have questions about this Privacy Policy or how your data is handled, please reach out:</p>
         <p style="text-align: center; font-weight: bold; background: #f8f9fa; padding: 15px; border-radius: 5px;">
             Developer Email: <a href="mailto:rajesh.codecanvas@gmail.com">rajesh.codecanvas@gmail.com</a>
